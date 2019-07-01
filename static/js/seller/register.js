@@ -4,10 +4,11 @@ $('#confirm').on('click',function(){
     var user = $('input[name=user]').val();
     var psd = $('input[name=psd]').val();
     var repsd = $('input[name=repsd]').val();
-    var logo = $('input[name=logo]').val();
-    var banner = $('input[name=banner]').val();
+    // var logo = $('input[name=logo]').val();
+    // var banner = $('input[name=banner]').val();
     //判断是否为空
-    if(!user || !psd || !repsd || !logo || !banner){
+    // if(!user || !psd || !repsd || !logo || !banner){
+    if(!user || !psd || !repsd){
         alert('输入不能为空');
         return;
     }

@@ -19,7 +19,8 @@ module.exports.canRegister = function(user){
 //保存商家信息,注册
 module.exports.saveSellerInfo = function({sellername,password,logo,banner}){
     return new Promise((resolve,reject)=>{
-        db.query(`INSERT INTO seller(sellername,password,logo,banner) VALUES(?,?,?,?)`,[sellername,password,logo,banner],result=>{
+        // db.query(`INSERT INTO seller(sellername,password,logo,banner) VALUES(?,?,?,?)`,[sellername,password,logo,banner],result=>{
+        db.query(`INSERT INTO seller(sellername,password) VALUES(?,?)`,[sellername,password],result=>{
             if(result){
                 resolve(); //注册成功
             }else{

@@ -20,11 +20,12 @@ router.post('/register',(req,res)=>{
         let psd = fields.psd.length>0 ? fields.psd[0] : '';
         let repsd = fields.repsd.length>0 ? fields.repsd[0] : '';
 
-        let logoPath = files.logo.length>0 ? ('/'+files.logo[0].path) : '';
-        let bannerPath = files.banner.length>0 ? ('/'+files.banner[0].path) : '';
+        // let logoPath = files.logo.length>0 ? ('/'+files.logo[0].path) : '';
+        // let bannerPath = files.banner.length>0 ? ('/'+files.banner[0].path) : '';
 
-        console.log(user,psd,repsd,logoPath,bannerPath)
-        if(!user || !psd || !repsd || !logoPath || !bannerPath){
+        // console.log(user,psd,repsd,logoPath,bannerPath)
+        // if(!user || !psd || !repsd || !logoPath || !bannerPath){
+        if(!user || !psd || !repsd){
             res.json({
                 status:1,
                 message: '输入不能为空'
@@ -43,9 +44,9 @@ router.post('/register',(req,res)=>{
             //不存在,注册
             seller.saveSellerInfo({
                 sellername: user,
-                password: psd,
-                logo: logoPath,
-                banner: bannerPath
+                password: psd
+                // logo: logoPath,
+                // banner: bannerPath
             })
             .then(()=>{
                 res.json({
