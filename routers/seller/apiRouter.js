@@ -22,8 +22,9 @@ router.post('/register',(req,res)=>{
 
         // let logoPath = files.logo.length>0 ? ('/'+files.logo[0].path) : '';
         // let bannerPath = files.banner.length>0 ? ('/'+files.banner[0].path) : '';
-
-        // console.log(user,psd,repsd,logoPath,bannerPath)
+        user = JSON.stringify(user)
+        psd = JSON.stringify(psd)
+        repsd = JSON.stringify(repsd)
         // if(!user || !psd || !repsd || !logoPath || !bannerPath){
         if(!user || !psd || !repsd){
             res.json({
@@ -74,6 +75,8 @@ router.post('/register',(req,res)=>{
 router.post('/login',(req,res)=>{
     //取得请求参数
     let {username,password} = req.body;
+    username = JSON.stringify(username)
+    password = JSON.stringify(password)
     //判断
     if(!username || !password){
         res.json({
